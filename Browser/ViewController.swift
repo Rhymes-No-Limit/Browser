@@ -26,14 +26,14 @@ class ViewController: UIViewController {
 
     }
 
-    @IBAction func backButtonAction(_ sender: UIButton) {
+    @IBAction func backButtonAction(_ sender: Any) {
         
         if webView.canGoBack {
             webView.goBack()
         }
     }
     
-    @IBAction func forwardButtonAction(_ sender: UIButton) {
+    @IBAction func forwardButtonAction(_ sender: Any) {
         if webView.canGoForward {
             webView.goForward()
         }
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITextFieldDelegate, WKNavigationDelegate {
-    
+  
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         let urlString = textField.text!
@@ -56,7 +56,7 @@ extension ViewController: UITextFieldDelegate, WKNavigationDelegate {
         
         return true
     }
-    
+ 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         urlTextField.text = webView.url?.absoluteString
