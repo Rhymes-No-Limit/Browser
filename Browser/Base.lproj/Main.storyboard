@@ -17,23 +17,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYg-S9-9Ul">
-                                <rect key="frame" x="0.0" y="79" width="393" height="739"/>
+                                <rect key="frame" x="0.0" y="101" width="393" height="717"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIS-Nf-kBb">
+                                <rect key="frame" x="290" y="59" width="87" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Forward"/>
+                                <connections>
+                                    <action selector="forwardButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LUF-W2-Och"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00x-AU-vbS">
+                                <rect key="frame" x="16" y="59" width="62" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i4Z-Hc-xvw"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rui-gQ-UAh">
+                                <rect key="frame" x="78" y="59" width="212" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="jZ5-ik-M9o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uYg-S9-9Ul" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1Ld-UU-R4c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hIS-Nf-kBb" secondAttribute="trailing" constant="16" id="8PG-ZI-jka"/>
+                            <constraint firstItem="00x-AU-vbS" firstAttribute="width" secondItem="hIS-Nf-kBb" secondAttribute="width" multiplier="0.712644" id="9gI-6D-D1q"/>
+                            <constraint firstItem="00x-AU-vbS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="C2n-o1-r8R"/>
+                            <constraint firstItem="hIS-Nf-kBb" firstAttribute="leading" secondItem="rui-gQ-UAh" secondAttribute="trailing" id="DLJ-ei-6ph"/>
+                            <constraint firstItem="rui-gQ-UAh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IYZ-tp-2ak"/>
+                            <constraint firstItem="uYg-S9-9Ul" firstAttribute="top" secondItem="rui-gQ-UAh" secondAttribute="bottom" constant="8" symbolic="YES" id="Phd-wq-ihs"/>
+                            <constraint firstItem="00x-AU-vbS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Q5E-tF-C2P"/>
                             <constraint firstItem="uYg-S9-9Ul" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eNr-BO-98h"/>
-                            <constraint firstItem="uYg-S9-9Ul" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eqS-lS-yN2"/>
+                            <constraint firstItem="hIS-Nf-kBb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jfD-YV-Z5w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uYg-S9-9Ul" secondAttribute="trailing" id="kPN-Ew-knC"/>
+                            <constraint firstItem="rui-gQ-UAh" firstAttribute="leading" secondItem="00x-AU-vbS" secondAttribute="trailing" id="uVE-ek-nLW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="00x-AU-vbS" id="eER-qI-L2K"/>
+                        <outlet property="forwardButton" destination="hIS-Nf-kBb" id="wxc-fu-CS5"/>
+                        <outlet property="urlTextField" destination="rui-gQ-UAh" id="0XQ-ca-Q4u"/>
+                        <outlet property="webView" destination="uYg-S9-9Ul" id="Iri-5l-zEo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
