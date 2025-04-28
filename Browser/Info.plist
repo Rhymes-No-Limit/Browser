@@ -17,6 +17,11 @@
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
 					<string>Main</string>
+					<key>App Transport Security Settings</key>
+					<dict>
+						<key>Allow Arbirary Loads</key>
+						<true/>
+					</dict>
 				</dict>
 			</array>
 		</dict>
